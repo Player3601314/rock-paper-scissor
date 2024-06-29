@@ -10,3 +10,4 @@ Currently, two official plugins are available:
 # rock-paper-scissor
 # rock-paper-scissor
 # rock-paper-scissor
+# rock-paper-scissor
