@@ -12,7 +12,7 @@ const ResetButton = () => {
   }
   return (
     <div className='flex justify-around'>
-      <button onClick={handleReset}>reset</button>
+      <button onClick={handleReset} className='bg-green-500 py-[6px] px-[14px] rounded-[6px]'>Reset</button>
     </div>
   )
 }

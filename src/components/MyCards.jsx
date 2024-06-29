@@ -1,12 +1,16 @@
 import { handleChooseMyCards } from "../hooks/handleChooseMyCard"
 import { handleShowHideCards } from "../hooks/handleShowHideCards"
 
+import rockImg from "../assets/rock.png"
+import papperImg from "../assets/papper.png"
+import scissorImg from "../assets/scissor.png"
+
 export const MyRock = () => {
   const { chooseMyRock, chooseMyBtn } = handleChooseMyCards()
   const { handleHideMyCard } = handleShowHideCards()
 
   const handleChooseCard = () => {
-    if(chooseMyBtn === false) return
+    if (chooseMyBtn === false) return
     chooseMyRock()
   }
 
@@ -16,10 +20,10 @@ export const MyRock = () => {
 
   return (
     <>
-      <div className="w-[100%] flex justify-between">
-        <button id="myCard" onClick={handleChooseCard} className="mx-auto">Rock</button>
+      <div className="w-[100%] flex justify-evenly items-center flex-col m-auto">
+        <img src={rockImg} id="myCard" onClick={handleChooseCard} className="mx-auto cursor-pointer" />
         {chooseMyBtn && (
-          <button onClick={handleChoose}>Choose</button>
+          <button className="my-[20px] bg-red-500 py-[6px] px-[14px] rounded-[6px]" onClick={handleChoose}>Choose</button>
         )}
       </div>
     </>
@@ -31,7 +35,7 @@ export const MyPapper = () => {
   const { handleHideMyCard } = handleShowHideCards()
 
   const handleChooseCard = () => {
-    if(chooseMyBtn === false) return
+    if (chooseMyBtn === false) return
     chooseMyPapper()
   }
 
@@ -40,10 +44,10 @@ export const MyPapper = () => {
   }
 
   return (
-    <div className="w-[100%] flex justify-between">
-      <button id="myCard" onClick={handleChooseCard} className="mx-auto">Papper</button>
+    <div className="w-[100%] flex justify-evenly items-center flex-col m-auto">
+      <img src={papperImg} id="myCard" onClick={handleChooseCard} className="mx-auto cursor-pointer" />
       {chooseMyBtn && (
-        <button onClick={handleChoose}>Choose</button>
+        <button className="my-[20px] bg-blue-500 py-[6px] px-[14px] rounded-[6px]" onClick={handleChoose}>Choose</button>
       )}
     </div>
   )
@@ -54,7 +58,7 @@ export const MyScissor = () => {
   const { handleHideMyCard } = handleShowHideCards()
 
   const handleChooseCard = () => {
-    if(chooseMyBtn === false) return
+    if (chooseMyBtn === false) return
     chooseMyScissor()
   }
 
@@ -63,10 +67,10 @@ export const MyScissor = () => {
   }
 
   return (
-    <div className="w-[100%] flex justify-between">
-      <button id="myCard" onClick={handleChooseCard} className="mx-auto">Scissor</button>
+    <div className="w-[100%] flex justify-evenly items-center flex-col m-auto">
+      <img src={scissorImg} id="myCard" onClick={handleChooseCard} className="mx-auto cursor-pointer" />
       {chooseMyBtn && (
-        <button onClick={handleChoose}>Choose</button>
+        <button className="my-[20px] bg-yellow-500 py-[6px] px-[14px] rounded-[6px]" onClick={handleChoose}>Choose</button>
       )}
     </div>
   )

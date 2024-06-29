@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const HomePage = () => {
   return (
     <div className='w-[100%] h-[100vh] bg-[#031F35] text-[#fff] text-center flex'>
-      <div className='w-[50%] m-auto h-[600px]'>
+      <div className='w-[50%] m-auto h-[600px] max-lg:w-[100%] max-lg:h-[80%]'>
         <h1 className='text-[28px]'>Welcome</h1>
         <div className='flex justify-evenly'>
           <h1 className='text-[48px] text-red-500'>Rock</h1>

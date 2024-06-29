@@ -25,9 +25,9 @@ const SignPlayer = () => {
         <span className='m-auto'>My score: {myScore}</span>
         <span className='m-auto'>Enemy score: {enemyScore}</span>
       </div>
-      <div className='w-[100%] h-[100vh] mx-auto bg-[#031F35] text-[#fff] flex justify-around'>
-        <div className='w-[50%] h-[50%] m-auto bg-[#333]'>
-          <div className='flex justify-between text-center'>
+      <div className='w-[100%] h-screen mx-auto bg-[#031F35] text-[#fff] flex justify-around'>
+        <div className='w-[50%] h-auto m-auto max-lg:w-[80%]'>
+          <div className='flex justify-between text-center items-center'>
             {showMyCards && (
               <div className='w-[100%] flex justify-between items-center text-center'>
                 {chooseMyCard === 0 && (
@@ -47,7 +47,7 @@ const SignPlayer = () => {
             )}
 
             {showMyCards !== true && (
-              <button onClick={handleShowBoth} className='mx-auto'>Show both</button>
+              <button onClick={handleShowBoth} className='mx-auto bg-green-500 py-[6px] px-[14px] rounded-[6px]'>Show both</button>
             )}
 
             {chooseEnemyCard === 1 && <MyRock />}
