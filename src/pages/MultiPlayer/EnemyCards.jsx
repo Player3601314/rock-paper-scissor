@@ -16,8 +16,6 @@ export const EnemyRock = ({ data }) => {
     })
   }
 
-  console.log(data);
-
   return (
     <>
       <div key={data.id} className="w-[100%] flex justify-between">

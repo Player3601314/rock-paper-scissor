@@ -42,36 +42,30 @@ function App() {
     sessionStorage.setItem("player1", true)
     sessionStorage.setItem("player2", false)
     setStartGame(true)
-    startGame ? console.log("started not game") : console.log("game started");
   }
 
   const player2Func = () => {
     sessionStorage.setItem("player1", false)
     sessionStorage.setItem("player2", true)
     setStartGame(true)
-    startGame ? console.log("started not game") : console.log("game started");
   }
 
   const calcPlayer1 = async (player1, player2, score, id) => {
     sessionStorage.setItem("player2", true)
     const docRef = doc(firestore, "room", id)
     if (player1 === player2) {
-      console.log("equal cards");
       setStartGame(null)
     }
     else if (player1 === 1 && player2 === 3) {
-      console.log("player1 win");
       await updateDoc(docRef, {
         myScore: score + 1,
       })
       setStartGame(null)
     }
     else if (player1 === 3 && player2 === 1) {
-      console.log("player2 win");
       setStartGame(null)
     }
     else if (player1 === 2 && player2 === 1) {
-      console.log("player1 win");
       await updateDoc(docRef, {
         myScore: score + 1,
       })
@@ -87,22 +81,18 @@ function App() {
     sessionStorage.setItem("player1", true)
     const docRef = doc(firestore, "room", id)
     if (player2 === player1) {
-      console.log("equal cards");
       setStartGame(null)
     }
     else if (player2 === 1 && player1 === 3) {
-      console.log("player2 win");
       await updateDoc(docRef, {
         enemyScore: score + 1,
       })
       setStartGame(null)
     }
     else if (player2 === 3 && player1 === 1) {
-      console.log("player1 win");
       setStartGame(null)
     }
     else if (player2 === 2 && player1 === 1) {
-      console.log("player2 win");
       await updateDoc(docRef, {
         enemyScore: score + 1,
       })
@@ -148,8 +138,6 @@ function App() {
     })
     setStartGame(false)
   }
-
-  console.log(player1, player2);
 
   return (
     <Routes>
