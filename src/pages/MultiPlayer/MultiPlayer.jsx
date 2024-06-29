@@ -1,6 +1,6 @@
 import { collection, doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import React, { Fragment, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { firestore } from '../../firebase/firebase'
 
 const MultiPlayer = () => {
@@ -8,6 +8,7 @@ const MultiPlayer = () => {
   const [modal, setModal] = useState(false)
   const [dataMap, setDataMap] = useState([])
   const roomCollection = collection(firestore, "room")
+  const navigate = useNavigate()
 
   const handleInter =  async(id,users) => {
     if(users === 2) return alert("The room has been full")
@@ -15,6 +16,7 @@ const MultiPlayer = () => {
     await updateDoc(docRef, {
       users: users + 1,
     })
+    navigate(`/multiplayer/room/${id}`)
   }
   useEffect(() => {
     onSnapshot(roomCollection, (snapShot) => {
@@ -70,7 +72,6 @@ const MultiPlayer = () => {
                   <Fragment key={data.id}>
                     <div className='w-[80%] bg-yellow-500 hover:bg-yellow-400 font-medium mx-auto text-center rounded-[6px] my-[35px]'>
                       <Link
-                        to={`/multiplayer/room/${data.id}`}
                         onClick={()=>handleInter(data.id, data.users)}
                       >
                         <p className='text-blue-500'>Name: {data.name}</p>
