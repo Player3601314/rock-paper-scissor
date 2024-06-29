@@ -9,3 +9,4 @@ Currently, two official plugins are available:
 # rock_paper_scissor
 # rock-paper-scissor
 # rock-paper-scissor
+# rock-paper-scissor
