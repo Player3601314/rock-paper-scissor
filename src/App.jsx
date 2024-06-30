@@ -56,13 +56,13 @@ function App() {
     if (player1 === player2) {
       setStartGame(null)
     }
+    else if (player1 === 3 && player2 === 1) {
+      setStartGame(null)
+    }
     else if (player1 === 1 && player2 === 3) {
       await updateDoc(docRef, {
         myScore: score + 1,
       })
-      setStartGame(null)
-    }
-    else if (player1 === 3 && player2 === 1) {
       setStartGame(null)
     }
     else if (player1 === 2 && player2 === 1) {
